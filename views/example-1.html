@@ -1,0 +1,13 @@
+<div v-scope="example1App()">
+	<ul>
+		<li v-for="(todo, index) in todos">
+			<input type="checkbox" :checked="todo.done" @change="updateTodo(index)">
+			<span style="margin-left: 10px" :style="{'text-decoration': todo.done ? 'line-through' : 'none'}">{{ todo.label }}</span>
+		</li>
+	</ul>
+	<form @submit.prevent="addTodo">
+		<label for="example_1_todo_input">Next todo item: </label>
+		<input type="text" id="example_1_todo_input" v-model="newTodo">
+		<button>Add todo item</button>
+	</form>
+</div>
